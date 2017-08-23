@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {InfoService} from "../../services/info.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor(public _is:InfoService) { }
+  constructor(public _is:InfoService, private router:Router) { }
 
-  ngOnInit() {
+
+  buscar_producto(texto:string){
+
+    //navegamos a search
+    this.router.navigate(['buscar',texto]);
+
   }
-
 }

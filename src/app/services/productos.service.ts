@@ -18,11 +18,17 @@ export class ProductosService {
     if(this.productos.length === 0){
       this.http.get("https://cursoangular-portafolio.firebaseio.com/productos_idx.json")
         .subscribe(res => {
-          console.log(res.json());
+
+          this.productos = res.json();
           this.cargando = false;
         })
 
 
     }
+  }
+
+  public cargar_producto(id:string){
+    //
+    return this.http.get(`https://cursoangular-portafolio.firebaseio.com/productos/${id}.json`)
   }
 }

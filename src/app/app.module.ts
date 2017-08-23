@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PortafolioComponent } from './components/portafolio/portafolio.component';
 import { AboutComponent } from './components/about/about.component';
 import { PortafolioItemComponent } from './components/portafolio-item/portafolio-item.component';
+import {ProductosService} from "./services/productos.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { PortafolioItemComponent } from './components/portafolio-item/portafolio
     HttpModule,
     app_routing
   ],
-  providers: [InfoService],
+  providers: [InfoService,ProductosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
